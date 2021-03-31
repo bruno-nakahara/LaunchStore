@@ -3,6 +3,7 @@ const { unlinkSync } = require("fs")
 
 const User = require("../model/user")
 const Product = require("../model/product")
+const LoadProductService = require("../services/LoadProductService")
 
 const { formatCpfCnpj, formatCep } = require("../../lib/utils")
 
@@ -111,5 +112,12 @@ module.exports = {
                 error: "Error ao deletar!"
             })
         }
+    },
+    async ads(req, res) {
+        const products = await LoadProductService.load('products', {
+            where: { user_id: req.session.userId }
+        })
+
+        return res.render("user/ads", { products })
     }
 }
