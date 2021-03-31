@@ -4,16 +4,18 @@ const { formatPrice, date } = require("../../lib/utils")
 
 async function getImages(productId) {
     let files = await Product.files(productId)
+    
     files = files.map(file => ({
         ...file,
-        src: `${file.path.replace("public", "")}`
+        src: `${file.path.replace("public", "").replace(/\\/g, "/" )}`
     }))
     
     return files
 }
 
-async function format(product) { 
+async function format(product) {    
     const files = await getImages(product.id)
+    
     product.img = files[0].src
     product.files = files
     product.formattedPrice = formatPrice(product.price)
@@ -33,7 +35,7 @@ const LoadService = {
     load(service, filter) {
         this.filter = filter
         
-        return this[service](filter)
+        return this[service]()
     },
     async product() {
         try {
@@ -48,14 +50,10 @@ const LoadService = {
     async products() {
         try {
             const products = await Product.findAll(this.filter)
-            const productsPromise = products.map(product => {
-                
-                format(product)
-            }) //products.map(product => format(product))
-            const result = await Promise.all(productsPromise)
             
-            return result
-
+            const productsPromise = products.map(format) //products.map(product => format(product))
+            
+            return Promise.all(productsPromise) 
         } catch (error) {
             console.error(error)
         }

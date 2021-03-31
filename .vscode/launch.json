@@ -9,7 +9,7 @@
             "request": "attach",
             "name": "Attach to Process",
             "protocol": "inspector",
-            "adress": "localhost",
+            "address": "localhost",
             "port": 9229
         }
     ]

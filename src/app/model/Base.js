@@ -1,19 +1,24 @@
 const db = require("../../config/db")
 
 function find(filters, table) {
-    let query = `SELECT * FROM ${table}`
-
-    if(filters) {
-        Object.keys(filters).map(key => {
+    try {
+        let query = `SELECT * FROM ${table} `
+    
+        if (filters) {
+          Object.keys(filters).map(key => {
             query += ` ${key}`
     
             Object.keys(filters[key]).map(field => {
-                query += ` ${field} = '${filters[key][field]}'`
+              query += ` ${field} = '${filters[key][field]}'`
             })
-        })
-    }
-
-    return db.query(query)  
+          })
+        }
+    
+        return db.query(query)
+    
+      } catch (error) {
+        console.error(error);
+      } 
 }
 
 const Base = {
@@ -33,9 +38,14 @@ const Base = {
         return results.rows[0]
     },
     async findAll(filters) {
-        const results = await find(filters, this.table)
-        
-        return results.rows
+        try {
+            const results = await find(filters, this.table)
+            
+            return results.rows
+      
+          } catch (error) {
+            console.log(error)
+          }
     },
     async create(fields) {
         try {

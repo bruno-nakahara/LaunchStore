@@ -196,9 +196,6 @@ const Validate = {
 
         if (results.error)
             Validate.displayError(input, results.error)
-
-
-
     },
     displayError(input, error) {
         const div = document.createElement('div')
@@ -253,6 +250,22 @@ const Validate = {
         return {
             error,
             value
+        }
+    },
+    allFields(e) {
+        const items = document.querySelectorAll(".item input, .item select, .item textarea")
+
+        for (item of items) {
+            if (item.value == "") {
+                const message = document.createElement('div') 
+                message.classList.add('messages')
+                message.classList.add('error')
+                message.style.position = 'fixed'
+                message.innerHTML = 'Todos os campos são obrigatórios!'
+                document.querySelector('body').appendChild(message)
+
+                e.preventDefault()
+            }
         }
     }
 }
