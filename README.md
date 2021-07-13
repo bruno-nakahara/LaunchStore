@@ -4,4 +4,11 @@
 
 <h2>Funcionalidades</h2>
 
-<p></p>
+<ul>
+  <li>Cadastro de usuários.</li>
+  <li>Cadastro de usuários.</li>
+  <li>Cadastro de usuários.</li>
+  <li>Cadastro de usuários.</li>
+  <li>Cadastro de usuários.</li>
+  <li>Cadastro de usuários.</li>
+</ul>
