@@ -1,5 +1,7 @@
 <h1>LaunchStore - Bootcamp Rocketseat</h1>
 
+<h2>O que é Launchstore?</h2>
+
 <p>Launchstore é um e-commerce criado durante o bootcamp da rocketseat.</p>
 
 <h2>Funcionalidades</h2>
@@ -37,4 +39,11 @@
 
 <h2>Instalação e uso</h2>
 
-<p>No seu computador tem que ter o Node e o <a href="https://www.postgresql.org/download/">Postgres</a> instalados.</p>
+<p>No seu computador tem que ter o <a href="https://nodejs.org/en/">Node</a> e o <a href="https://www.postgresql.org/download/">Postgres</a> instalados.</p>
+
+<p>Após a instalação do Node e Postgres, siga os passos abaixo:</p>
+
+```
+# No terminal copie o repositório com o seguinte comando
+$ git clone https://github.com/bruno-nakahara/LaunchStore.git
+```
