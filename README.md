@@ -57,7 +57,8 @@ $ npm install
 
 # Para criação de banco de dados e tabelas utilize o arquivo "database.sql"
 
-# Para conectar com o seu banco de dados será necessário editar o arquivo "db.js" dentro da pasta "src/config" com a senha e o nome do banco que você criou
+# Para conectar com o seu banco de dados será necessário editar o arquivo "db.js" 
+# dentro da pasta "src/config" com a senha e o nome do banco que você criou
 
 # Agora você precisa popular o banco de dados, para isso utilize o arquivo "seed.js" com o seguinte comando no terminal
 $ node seed.js
