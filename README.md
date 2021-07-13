@@ -45,5 +45,28 @@
 
 ```
 # No terminal copie o repositório com o seguinte comando
+
 $ git clone https://github.com/bruno-nakahara/LaunchStore.git
+
+# Se preferir, tem a opção de download também.
+
+# Após clonar o repositório, pelo terminal, entra na pasta usando o comando
+
+$ cd Launchstore
+
+# Instalar as dependências
+
+$ npm install
+
+# Para criação de banco de dados e tabelas utilize o arquivo "database.sql"
+
+#Para conectar com o seu banco de dados será necessário editar o arquivo "db.js" dentro da pasta "src/config" com a senha e o nome do banco que você criou
+
+# Agora você precisa popular o banco de dados, para isso utilize o arquivo "seed.js" com o seguinte comando no terminal
+
+$ node seed.js
+
+# Depois de terminar de popular os dados, rode a aplicação.
+
+$ npm start
 ```
