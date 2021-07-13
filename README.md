@@ -1,3 +1,7 @@
-# LaunchStore - Bootcamp Rocketseat
+<h1>LaunchStore - Bootcamp Rocketseat</h1>
 
-### Launchstore é um e-commerce criado durante o bootcamp da rocketseat.
+<p>Launchstore é um e-commerce criado durante o bootcamp da rocketseat.</p>
+
+<h2>Funcionalidades</h2>
+
+<p></p>
