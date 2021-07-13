@@ -1,3 +1,3 @@
 # LaunchStore - Bootcamp Rocketseat
 
-### Launchstore is a e-commerce site project created during the bootcamp
+### Launchstore é um e-commerce criado durante o bootcamp da rocketseat.
